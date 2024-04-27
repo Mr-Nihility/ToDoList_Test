@@ -1,0 +1,36 @@
+.statusPlaceHolder {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: auto;
+}
+
+.statusMenu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.statusMenuList {
+    position: absolute;
+    z-index: 210;
+    border: 1px gray solid;
+    border-radius: 4px;
+}
+
+.statusItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background-color: #242424;
+    padding: 5px 15px;
+
+    &:hover {
+        background-color: #3b3b3b;
+    }
+}

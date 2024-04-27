@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(1.1) saturate(120%);
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+
+button {
+  -webkit-appearance: button;
+  background-color: initial;
+  background-image: none;
+  transition: all 0.1s linear;
+
+  &:hover {
+    filter: brightness(1.1) saturate(120%);
+  }
+}
+
+
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
