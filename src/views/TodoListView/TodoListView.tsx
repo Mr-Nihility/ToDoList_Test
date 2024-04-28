@@ -24,6 +24,7 @@ const columns = [
     cell: EditableCell,
     enableColumnFilter: true,
     filterFn: "includesString",
+    minSize: 250,
   }),
   columnHelper.accessor("status", {
     header: "Status",
@@ -52,7 +53,7 @@ const columns = [
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#32c732",
+          backgroundColor: "#4CCD99",
           height: "100%",
         }}
       >

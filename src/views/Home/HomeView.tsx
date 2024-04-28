@@ -45,6 +45,7 @@ const columns = [
   columnHelper.accessor("notes", {
     header: "Notes",
     cell: EditableCell,
+    minSize: 300,
   }),
 ];
 

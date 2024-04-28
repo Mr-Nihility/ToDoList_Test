@@ -1,5 +1,5 @@
+import { faker } from "@faker-js/faker";
 import { CardStatus, Todo, TodoStatus } from "../../types/todo.types";
-
 export const STATUS_PENDING: TodoStatus = {
   id: 1,
   name: "Pending",
@@ -57,6 +57,36 @@ const DATA: Todo[] = [
     updateAt: null,
     deleteAt: null,
   },
+  {
+    id: "4",
+    text: "Create todo form",
+    status: null,
+    due: new Date("2025/09/18").toDateString(),
+    notes: "describe fields",
+    cardStatus: CardStatus.Active,
+    createAt: new Date("2024/09/10").toDateString(),
+    updateAt: null,
+    deleteAt: null,
+  },
+  ...faker.helpers.multiple(createRandomTodo, {
+    count: 15,
+  }),
 ];
 
+export function createRandomTodo(): Todo {
+  return {
+    id: faker.string.uuid(),
+    text: faker.lorem.words(2),
+    notes: faker.lorem.words(5),
+    due: faker.date.soon().toDateString(),
+    createAt: faker.date.past().toDateString(),
+    updateAt: null,
+    deleteAt: null,
+    cardStatus: faker.helpers.arrayElement([
+      CardStatus.Active,
+      CardStatus.Removed,
+    ]),
+    status: faker.helpers.arrayElement([...STATUSES, null]),
+  };
+}
 export default DATA;

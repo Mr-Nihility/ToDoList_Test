@@ -60,7 +60,19 @@ const columns = [
   }),
   columnHelper.accessor("status", {
     header: "Status",
-    cell: (props) => <div>{props.getValue()?.name}</div>,
+    cell: (props) => (
+      <div
+        style={{
+          backgroundColor: props.getValue()?.color,
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {props.getValue()?.name}
+      </div>
+    ),
     enableSorting: false,
     enableColumnFilter: true,
     filterFn: (row, columnId, filterStatuses: number[]) => {
@@ -89,7 +101,7 @@ const columns = [
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#913f3f",
+          backgroundColor: "#A94438",
           height: "100%",
         }}
       >
