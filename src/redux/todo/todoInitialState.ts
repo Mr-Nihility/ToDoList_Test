@@ -1,21 +1,21 @@
 import { CardStatus, Todo, TodoStatus } from "../../types/todo.types";
 
-const STATUS_ON_DECK: TodoStatus = {
+export const STATUS_ON_DECK: TodoStatus = {
   id: 1,
   name: "On Deck",
   color: "blue",
 };
-const STATUS_IN_PROGRESS: TodoStatus = {
+export const STATUS_IN_PROGRESS: TodoStatus = {
   id: 2,
   name: "In Progress",
   color: "yellow",
 };
-const STATUS_TESTING: TodoStatus = {
+export const STATUS_TESTING: TodoStatus = {
   id: 3,
   name: "Testing",
   color: "pink",
 };
-const STATUS_DEPLOYED: TodoStatus = {
+export const STATUS_DEPLOYED: TodoStatus = {
   id: 4,
   name: "Deployed",
   color: "green",

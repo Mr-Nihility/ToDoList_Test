@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import NavigationLayout from "./components/NavigationLayout/NavigationLayout";
 import { RouterPath } from "./types/router.types";
+import AddView from "./views/AddView/AddView";
 import ErrorPage from "./views/ErrorView/ErrorView";
 import HomeView from "./views/Home/HomeView";
 import RemovedTodoView from "./views/RemovedTodoView/RemovedTodoView";
@@ -34,6 +35,14 @@ function App() {
             element={
               <Suspense fallback={<h2>Loading ...</h2>}>
                 <RemovedTodoView />
+              </Suspense>
+            }
+          />
+          <Route
+            path={RouterPath.Add}
+            element={
+              <Suspense fallback={<h2>Loading ...</h2>}>
+                <AddView />
               </Suspense>
             }
           />

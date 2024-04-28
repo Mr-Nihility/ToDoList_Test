@@ -21,7 +21,6 @@ const columnHelper = createColumnHelper<Todo>();
 const columns = [
   columnHelper.accessor("text", {
     header: "Task",
-
     cell: EditableCell,
     enableColumnFilter: true,
     filterFn: "includesString",
@@ -43,7 +42,6 @@ const columns = [
   }),
   columnHelper.accessor("notes", {
     header: "Notes",
-
     cell: EditableCell,
   }),
   columnHelper.accessor("cardStatus", {
@@ -88,31 +86,36 @@ function TodoListView() {
 
   return (
     <>
-      <Filters
-        columnFilters={columnFilters}
-        setColumnFilters={setColumnFilters}
-      />
-
-      <TodoTable
-        tableOptions={{
-          data: todoList,
-          columns,
-          state: {
-            columnFilters,
-          },
-          getCoreRowModel: getCoreRowModel(),
-          getFilteredRowModel: getFilteredRowModel(),
-          getPaginationRowModel: getPaginationRowModel(),
-          getSortedRowModel: getSortedRowModel(),
-          columnResizeMode: "onChange",
-          meta: {
-            updateData: (todo: Todo) => {
-              console.log(todo);
-              dispatch(patchTodo(todo));
-            },
-          },
-        }}
-      />
+      {todoList.length ? (
+        <>
+          <Filters
+            columnFilters={columnFilters}
+            setColumnFilters={setColumnFilters}
+          />
+          <TodoTable
+            tableOptions={{
+              data: todoList,
+              columns,
+              state: {
+                columnFilters,
+              },
+              getCoreRowModel: getCoreRowModel(),
+              getFilteredRowModel: getFilteredRowModel(),
+              getPaginationRowModel: getPaginationRowModel(),
+              getSortedRowModel: getSortedRowModel(),
+              columnResizeMode: "onChange",
+              meta: {
+                updateData: (todo: Todo) => {
+                  console.log(todo);
+                  dispatch(patchTodo(todo));
+                },
+              },
+            }}
+          />
+        </>
+      ) : (
+        <h3>{" Ooops! You have no task yet :("}</h3>
+      )}
     </>
   );
 }

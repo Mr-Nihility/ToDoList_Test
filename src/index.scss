@@ -73,6 +73,7 @@ button:focus-visible {
 
 
 svg {
+  display: block;
   cursor: pointer,
 }
 
@@ -158,4 +159,9 @@ svg {
     background-color: #e3e3e3;
     color: #242424;
   }
+}
+
+.tableBox {
+  min-width: 100%;
+  overflow-x: auto;
 }

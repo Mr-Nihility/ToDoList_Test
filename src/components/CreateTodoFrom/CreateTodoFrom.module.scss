@@ -1,0 +1,35 @@
+.contentBox {
+    padding: 2em;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.input {
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn {
+    background-color: #000;
+}

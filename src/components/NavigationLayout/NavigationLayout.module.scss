@@ -1,11 +1,16 @@
 .header {
     padding: 5px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 .navList {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -15,4 +20,9 @@
 
 .active {
     color: blue;
+}
+
+.addBtn {
+    padding: 0;
+    background-color: #08b138;
 }

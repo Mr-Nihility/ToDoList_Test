@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Todo } from "../../types/todo.types";
 import CalendarIcon from "../Icons/CalendarIcon";
-
 import styles from "./DateCell.module.scss";
 
 type DateCustomInputProps = {
@@ -12,7 +11,7 @@ type DateCustomInputProps = {
   onClick: () => void;
   clearDate: () => void;
 };
-const DateCustomInput = forwardRef(
+export const DateCustomInput = forwardRef(
   (
     { value, onClick, clearDate }: DateCustomInputProps,
     ref: ForwardedRef<HTMLDivElement>

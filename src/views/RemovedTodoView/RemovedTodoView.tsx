@@ -115,31 +115,37 @@ function RemovedTodoView() {
 
   return (
     <>
-      <Filters
-        columnFilters={columnFilters}
-        setColumnFilters={setColumnFilters}
-      />
-
-      <TodoTable
-        tableOptions={{
-          data: todoList,
-          columns,
-          state: {
-            columnFilters,
-          },
-          getCoreRowModel: getCoreRowModel(),
-          getFilteredRowModel: getFilteredRowModel(),
-          getPaginationRowModel: getPaginationRowModel(),
-          getSortedRowModel: getSortedRowModel(),
-          columnResizeMode: "onChange",
-          meta: {
-            updateData: (todo: Todo) => {
-              console.log(todo);
-              dispatch(patchTodo(todo));
-            },
-          },
-        }}
-      />
+      {todoList.length ? (
+        <>
+          <p style={{ marginBottom: "50px" }}>Removed cards:</p>
+          <Filters
+            columnFilters={columnFilters}
+            setColumnFilters={setColumnFilters}
+          />
+          <TodoTable
+            tableOptions={{
+              data: todoList,
+              columns,
+              state: {
+                columnFilters,
+              },
+              getCoreRowModel: getCoreRowModel(),
+              getFilteredRowModel: getFilteredRowModel(),
+              getPaginationRowModel: getPaginationRowModel(),
+              getSortedRowModel: getSortedRowModel(),
+              columnResizeMode: "onChange",
+              meta: {
+                updateData: (todo: Todo) => {
+                  console.log(todo);
+                  dispatch(patchTodo(todo));
+                },
+              },
+            }}
+          />
+        </>
+      ) : (
+        <h3>{" Ooops! You have no removed  task yet :("}</h3>
+      )}
     </>
   );
 }

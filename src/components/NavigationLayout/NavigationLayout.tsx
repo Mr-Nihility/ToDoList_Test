@@ -1,3 +1,4 @@
+import { MdOutlineAddBox } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import { RouterPath } from "../../types/router.types";
 import styles from "./NavigationLayout.module.scss";
@@ -44,9 +45,15 @@ function NavigationLayout() {
                 Removed cards
               </NavLink>
             </li>
+            <li>
+              <NavLink className={styles.addBtn} to={RouterPath.Add}>
+                <MdOutlineAddBox size={50} />
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>
+
       <Outlet />
     </>
   );
