@@ -5,7 +5,7 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-  // base: "/ToDoList_Test/",
+  base: "/ToDoList_Test/",
   plugins: [
     svgr(),
     react(),
