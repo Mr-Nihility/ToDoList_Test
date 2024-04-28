@@ -1,6 +1,7 @@
 {
   "name": "todolist-test",
   "private": true,
+  "homepage": "https://mr-nihility.github.io/ToDoList_Test",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
