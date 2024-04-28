@@ -49,7 +49,7 @@ export function CreateTodoFrom() {
 
     dispatch(addTodo(newTodo));
 
-    navigator(RouterPath.TodoList);
+    navigator(`/${RouterPath.TodoList}`);
   };
 
   return (
