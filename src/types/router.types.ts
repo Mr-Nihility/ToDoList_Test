@@ -1,5 +1,5 @@
 export const enum RouterPath {
-  Home = "",
+  Home = "home",
   TodoList = "todoList",
   RemovedTodoList = "removed",
   Add = "add",
