@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path={RouterPath.Home} element={<NavigationLayout />}>
+        <Route element={<NavigationLayout />}>
           <Route
-            index
+            path={RouterPath.Home}
             element={
               <Suspense fallback={<h2>Loading ...</h2>}>
                 <HomeView />
