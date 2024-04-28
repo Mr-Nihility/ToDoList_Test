@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
@@ -12,8 +13,10 @@ import { TodoSchema } from "../../types/todoSchema";
 import { DateCustomInput } from "../DateCell/DateCell";
 import styles from "./CreateTodoFrom.module.scss";
 export function CreateTodoFrom() {
+  const [isDatePickerOpened, setIsDatePickerOpened] = useState(false);
   const navigator = useNavigate();
   const dispatch = useAppDispatch();
+
   const {
     register,
     handleSubmit,
@@ -78,6 +81,7 @@ export function CreateTodoFrom() {
                 <label className={styles.label}>
                   Enter due date
                   <DatePicker
+                    onCalendarOpen={() => isDatePickerOpened}
                     wrapperClassName="date-wrapper"
                     calendarClassName={"calendar"}
                     dateFormat="MMM d"
@@ -85,6 +89,8 @@ export function CreateTodoFrom() {
                     onChange={(date) => field.onChange(date?.toDateString())}
                     customInput={
                       <DateCustomInput
+                        value={field.value ? new Date(field.value) : null}
+                        onClick={() => setIsDatePickerOpened(true)}
                         clearDate={() => {
                           setValue("due", null);
                         }}
