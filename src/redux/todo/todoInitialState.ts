@@ -1,37 +1,33 @@
 import { CardStatus, Todo, TodoStatus } from "../../types/todo.types";
 
-export const STATUS_ON_DECK: TodoStatus = {
+export const STATUS_PENDING: TodoStatus = {
   id: 1,
-  name: "On Deck",
-  color: "blue",
+  name: "Pending",
+  color: "#068DA9",
 };
 export const STATUS_IN_PROGRESS: TodoStatus = {
   id: 2,
   name: "In Progress",
-  color: "yellow",
+  color: "#FFC55A",
 };
-export const STATUS_TESTING: TodoStatus = {
+
+export const STATUS_DONE: TodoStatus = {
   id: 3,
-  name: "Testing",
-  color: "pink",
+  name: "Done",
+  color: "#41B06E",
 };
-export const STATUS_DEPLOYED: TodoStatus = {
-  id: 4,
-  name: "Deployed",
-  color: "green",
-};
+
 export const STATUSES: TodoStatus[] = [
-  STATUS_ON_DECK,
+  STATUS_PENDING,
   STATUS_IN_PROGRESS,
-  STATUS_TESTING,
-  STATUS_DEPLOYED,
+  STATUS_DONE,
 ];
 
 const DATA: Todo[] = [
   {
     id: "1",
     text: "Add a New Feature",
-    status: STATUS_ON_DECK,
+    status: STATUS_PENDING,
     due: new Date("2024/10/15").toDateString(),
     notes: "This is a note",
     cardStatus: CardStatus.Active,

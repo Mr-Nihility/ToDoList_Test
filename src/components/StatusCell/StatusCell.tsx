@@ -31,7 +31,7 @@ const StatusCell = ({
         className={styles.statusPlaceHolder}
         style={{
           backgroundColor: color || "transparent",
-          color: "gray",
+          color: "#fff",
         }}
       >
         {name}

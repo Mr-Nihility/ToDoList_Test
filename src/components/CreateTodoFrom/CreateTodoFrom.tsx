@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks";
-import { STATUS_ON_DECK } from "../../redux/todo/todoInitialState";
+import { STATUS_PENDING } from "../../redux/todo/todoInitialState";
 import { addTodo } from "../../redux/todo/todoSlice";
 import { RouterPath } from "../../types/router.types";
 import { CardStatus, Todo } from "../../types/todo.types";
@@ -44,7 +44,7 @@ export function CreateTodoFrom() {
       updateAt: null,
       deleteAt: null,
       cardStatus: CardStatus.Active,
-      status: STATUS_ON_DECK,
+      status: STATUS_PENDING,
     };
 
     dispatch(addTodo(newTodo));
